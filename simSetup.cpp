@@ -33,12 +33,12 @@ void setupDOF(const Eigen::MatrixXd & V, const double compression, Eigen::Vector
          for (int j = 0; j < 3; j++){
               dof(9*i+j) = V(i,j);
               if(j == 0)
-              dof(9*i+j) = compression * V(i,j);
+                 dof(9*i+j) = compression * V(i,j);
          }
          //dof(9*i+5) = 1 ;
          //dof(9*i+8) = 1 ;
-         dof(9*i+5) = 1 + 0.0001 * rand()/(RAND_MAX + 1.0);
-         dof(9*i+8) = 1 + 0.0001 * rand()/(RAND_MAX + 1.0);
+         dof(9*i+5) = 1 + 0.001 * rand()/(RAND_MAX + 1.0);
+         dof(9*i+8) = 1 + 0.001 * rand()/(RAND_MAX + 1.0);
      }
 }
 
